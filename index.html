@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>attack25</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="d3.js"></script>
+	<style type="text/css">
+		body {
+			background-color: #999999;
+		}
+		#mainbox {
+			position: absolute;
+			top: 100px;
+			left: 400px;
+		}
+		.box {
+			height: 100px;
+			width: 100px;
+			position: absolute;
+			background-color: #FFFFFF;
+		}
+		.box:hover {
+			background-color: #EEEEEE;
+			box-shadow: 5px 5px 2px #888888;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$((".box")).click(function(){
+				alert($(this).attr("id").substr(3));
+			})
+		});
+	</script>
+</head>
+<body style="margin: 0;">
+	<div id="mainbox">
+		<script type="text/javascript">
+			for (i=5; i>0; i--) {
+				for (j=5; j>=1; j--) {
+					$("#mainbox").append("<div id='box"+((i-1)*5+j)+"' class='box'>"+((i-1)*5+j)+"</div>");
+					$("#box"+((i-1)*5+j)).css({
+						left: 100*(j-1),
+						top: 100*(i-1)
+					});	
+				}
+			}
+		</script>
+	</div>
+	<div id="controlbotton"></div>
+</body>
+</html>
