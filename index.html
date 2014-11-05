@@ -18,16 +18,56 @@
 			width: 100px;
 			position: absolute;
 			background-color: #FFFFFF;
+			cursor: pointer;
 		}
 		.box:hover {
 			background-color: #EEEEEE;
 			box-shadow: 5px 5px 2px #888888;
 		}
+		#colorselect {
+			height: 60px;
+			width: 300px;
+			position: fixed;
+			display: none;
+			box-shadow: 2px 2px 1px #888888;
+		}
+		.colorselect {
+			width: 60px;
+			height: 60px;
+			position: absolute;
+			cursor: pointer;
+		}
+		.colorselect:hover {
+			box-shadow: 2px 2px 1px #888888;
+		}
+		.red {
+			background-color: red;
+		}
+		.yellow {
+			background-color: yellow;
+		}
+		.blue {
+			background-color: blue;
+		}
+		.green {
+			background-color: green;
+		}
+		.purple {
+			background-color: purple;
+		}
 	</style>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$((".box")).click(function(){
-				alert($(this).attr("id").substr(3));
+				$("#colorselect").css({
+					display: 'block',
+					left: $(this).offset().left-100,
+					top: $(this).offset().top+100
+				});
+				$(".colorselect").click(function(){
+					alert($(this).attr("id"));
+					$("#colorselect").css("display", "none");
+				});
 			})
 		});
 	</script>
@@ -46,6 +86,14 @@
 			}
 		</script>
 	</div>
-	<div id="controlbotton"></div>
+	<div id="colorselect">
+		<div id="purple" class="colorselect purple" style="left: 240px;"></div>
+		<div id="green" class="colorselect green" style="left: 180px;"></div>
+		<div id="blue" class="colorselect blue" style="left: 120px;"></div>
+		<div id="yellow" class="colorselect yellow" style="left: 60px;"></div>
+		<div id="red" class="colorselect red"></div>
+	</div>
+	<div id="controlbotton">
+	</div>
 </body>
 </html>
