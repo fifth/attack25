@@ -1,76 +1,17 @@
 <html>
 <head>
 	<title>attack25</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<script type="text/javascript">
+		var boxid;
+		var store=new Array();
+		store[0]="0000000000000000000000000";
+		var count=0;
+	</script>
 	<script type="text/javascript" src="jquery-2.1.1.js"></script>
 	<script type="text/javascript" src="d3.js"></script>
-	<style type="text/css">
-		body {
-			background-color: #999999;
-		}
-		#mainbox {
-			position: absolute;
-			top: 100px;
-			left: 400px;
-		}
-		.box {
-			height: 100px;
-			width: 100px;
-			position: absolute;
-			background-color: #FFFFFF;
-			cursor: pointer;
-		}
-		.box:hover {
-			background-color: #EEEEEE;
-			box-shadow: 5px 5px 2px #888888;
-		}
-		#colorselect {
-			height: 60px;
-			width: 300px;
-			position: fixed;
-			display: none;
-			box-shadow: 2px 2px 1px #888888;
-		}
-		.colorselect {
-			width: 60px;
-			height: 60px;
-			position: absolute;
-			cursor: pointer;
-		}
-		.colorselect:hover {
-			box-shadow: 2px 2px 1px #888888;
-		}
-		.red {
-			background-color: red;
-		}
-		.yellow {
-			background-color: yellow;
-		}
-		.blue {
-			background-color: blue;
-		}
-		.green {
-			background-color: green;
-		}
-		.purple {
-			background-color: purple;
-		}
-	</style>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$((".box")).click(function(){
-				$("#colorselect").css({
-					display: 'block',
-					left: $(this).offset().left-100,
-					top: $(this).offset().top+100
-				});
-				$(".colorselect").click(function(){
-					alert($(this).attr("id"));
-					$("#colorselect").css("display", "none");
-				});
-			})
-		});
-	</script>
+	<script type="text/javascript" src="main.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body style="margin: 0;">
 	<div id="mainbox">
@@ -86,11 +27,12 @@
 			}
 		</script>
 	</div>
+	<div id="cover"></div>
 	<div id="colorselect">
-		<div id="purple" class="colorselect purple" style="left: 240px;"></div>
-		<div id="green" class="colorselect green" style="left: 180px;"></div>
-		<div id="blue" class="colorselect blue" style="left: 120px;"></div>
-		<div id="yellow" class="colorselect yellow" style="left: 60px;"></div>
+		<div id="purple" class="colorselect purple" style="left: 400px;"></div>
+		<div id="green" class="colorselect green" style="left: 300px;"></div>
+		<div id="blue" class="colorselect blue" style="left: 200px;"></div>
+		<div id="yellow" class="colorselect yellow" style="left: 100px;"></div>
 		<div id="red" class="colorselect red"></div>
 	</div>
 	<div id="controlbotton">
