@@ -21,12 +21,34 @@ $(document).ready(function(){
 		$("#box"+boxid).addClass($(this).attr("id"));
 		$("#colorselect").css("display", "none");
 		$("#cover").css("display", "none");
-		count++;
 		check(boxid);
 		storedata();
+		count++;
+		if (count>=25) {
+			alert('game over');
+		}
 	});
 	$("#back").click(function(){
-		alert('back');
+		store.pop();
+		presstatus=store[store.length-1];
+		for (i=5; i>0; i--) {
+			for (j=5; j>=1; j--) {
+				classvalue='box';
+				if (presstatus[(i-1)*5+j-1]=='r') {
+					classvalue+=' red';
+				} else if (presstatus[(i-1)*5+j-1]=='b') {
+					classvalue+=' blue';
+				} else if (presstatus[(i-1)*5+j-1]=='y') {
+					classvalue+=' yellow';
+				} else if (presstatus[(i-1)*5+j-1]=='g') {
+					classvalue+=' green';
+				} else if (presstatus[(i-1)*5+j-1]=='p') {
+					classvalue+=' purple';
+				}
+				$("#box"+((i-1)*5+j)).attr("class", classvalue);	
+			}
+		}
+		count--;
 	});
 });
 function storedata(){
@@ -44,18 +66,20 @@ function storedata(){
 function check(pos) {
 	currentcolor=$("#box"+pos).attr("class").substring(4);
 	currentpos=pos;
-	check_up(currentpos, currentcolor);
-	check_down(currentpos, currentcolor);
-	check_left(currentpos, currentcolor);
-	check_right(currentpos, currentcolor);
-	check_leftup(currentpos, currentcolor);
-	check_leftdown(currentpos, currentcolor);
-	check_rigthup(currentpos, currentcolor);
-	check_rightdown(currentpos, currentcolor);
+	re=''
+	re+=check_up(currentpos, currentcolor);
+	re+=check_down(currentpos, currentcolor);
+	re+=check_left(currentpos, currentcolor);
+	re+=check_right(currentpos, currentcolor);
+	re+=check_leftup(currentpos, currentcolor);
+	re+=check_leftdown(currentpos, currentcolor);
+	re+=check_rigthup(currentpos, currentcolor);
+	re+=check_rightdown(currentpos, currentcolor);
+	alert(re);
 }
 function check_up(pos, color){
 	if (((pos>=1)&&(pos<=5))||$("#box"+pos).attr("class").substring(4)!=color) {
-		return false;
+		return 0;
 	}
 	find=pos-5;
 	limit=pos%5;
@@ -67,13 +91,14 @@ function check_up(pos, color){
 			$("#box"+i).attr("class", "box");
 			$("#box"+i).addClass(color);
 		}
+		return 1;
 	} else {
-		return false;
+		return 0;
 	}
 }
 function check_down(pos, color){
 	if (((pos>=21)&&(pos<=25))||$("#box"+pos).attr("class").substring(4)!=color) {
-		return false;
+		return 0;
 	}
 	find=pos-(-5);
 	limit=pos%5-(-20);
@@ -85,13 +110,14 @@ function check_down(pos, color){
 			$("#box"+i).attr("class", "box");
 			$("#box"+i).addClass(color);
 		}
+		return 1;
 	} else {
-		return false;
+		return 0;
 	}
 }
 function check_left(pos, color){
 	if ((pos%5==1)||$("#box"+pos).attr("class").substring(4)!=color) {
-		return false;
+		return 0;
 	}
 	find=pos-1;
 	limit=pos-(pos-1)%5;
@@ -103,13 +129,14 @@ function check_left(pos, color){
 			$("#box"+i).attr("class", "box");
 			$("#box"+i).addClass(color);
 		}
+		return 1;
 	} else {
-		return false;
+		return 0;
 	}
 }
 function check_right(pos, color){
 	if ((pos%5==0)||$("#box"+pos).attr("class").substring(4)!=color) {
-		return false;
+		return 0;
 	}
 	find=pos-(-1);
 	limit=pos-(pos-1)%5+4;
@@ -121,13 +148,14 @@ function check_right(pos, color){
 			$("#box"+i).attr("class", "box");
 			$("#box"+i).addClass(color);
 		}
+		return 1;
 	} else {
-		return false;
+		return 0;
 	}
 }
 function check_leftup(pos, color){
-	if (((pos%5==1)&&(pos<=5))||$("#box"+pos).attr("class").substring(4)!=color) {
-		return false;
+	if ((pos%5==1)||(pos<=5)||$("#box"+pos).attr("class").substring(4)!=color) {
+		return 0;
 	}
 	find=pos-6;
 	while ((find>5)&&(find%5!=1)&&($("#box"+find).attr("class")!='box')&&($("#box"+find).attr("class").substring(4)!=color)) {
@@ -138,13 +166,14 @@ function check_leftup(pos, color){
 			$("#box"+i).attr("class", "box");
 			$("#box"+i).addClass(color);
 		}
+		return 1;
 	} else {
-		return false;
+		return 0;
 	}
 }
 function check_leftdown(pos, color){
-	if (((pos>=21)&&(pos%5==1))||$("#box"+pos).attr("class").substring(4)!=color) {
-		return false;
+	if ((pos>=21)||(pos%5==1)||$("#box"+pos).attr("class").substring(4)!=color) {
+		return 0;
 	}
 	find=pos-(-4);
 	while ((find<21)&&(find%5!=1)&&($("#box"+find).attr("class")!='box')&&($("#box"+find).attr("class").substring(4)!=color)) {
@@ -155,13 +184,14 @@ function check_leftdown(pos, color){
 			$("#box"+i).attr("class", "box");
 			$("#box"+i).addClass(color);
 		}
+		return 1;
 	} else {
-		return false;
+		return 0;
 	}
 }
 function check_rigthup(pos, color){
-	if (((pos%5==0)&&(pos<=5))||$("#box"+pos).attr("class").substring(4)!=color) {
-		return false;
+	if ((pos%5==0)||(pos<=5)||$("#box"+pos).attr("class").substring(4)!=color) {
+		return 0;
 	}
 	find=pos-4;
 	while ((find>5)&&(find%5!=0)&&($("#box"+find).attr("class")!='box')&&($("#box"+find).attr("class").substring(4)!=color)) {
@@ -172,13 +202,14 @@ function check_rigthup(pos, color){
 			$("#box"+i).attr("class", "box");
 			$("#box"+i).addClass(color);
 		}
+		return 1;
 	} else {
-		return false;
+		return 0;
 	}
 }
 function check_rightdown(pos, color){
-	if (((pos%5==0)&&(pos>=21))||$("#box"+pos).attr("class").substring(4)!=color) {
-		return false;
+	if ((pos%5==0)||(pos>=21)||$("#box"+pos).attr("class").substring(4)!=color) {
+		return 0;
 	}
 	find=pos-(-6);
 	while ((find<21)&&(find%5!=0)&&($("#box"+find).attr("class")!='box')&&($("#box"+find).attr("class").substring(4)!=color)) {
@@ -189,7 +220,8 @@ function check_rightdown(pos, color){
 			$("#box"+i).attr("class", "box");
 			$("#box"+i).addClass(color);
 		}
+		return 1;
 	} else {
-		return false;
+		return 0;
 	}
 }
