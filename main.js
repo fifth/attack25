@@ -25,6 +25,9 @@ $(document).ready(function(){
 		check(boxid);
 		storedata();
 	});
+	$("#back").click(function(){
+		alert('back');
+	});
 });
 function storedata(){
 	txt='';

@@ -7,9 +7,9 @@
 		var store=new Array();
 		store[0]="0000000000000000000000000";
 		var count=0;
+		var subject=new Array("中国経済","浙江大学","中国地域","日本法律","おもしろい","日本文化","おもしろい","中国法律","日本経済","数学","中国アイドル","漢字","日中友好","日本アニメ","日本法律","日中音楽","中国文化","数学","漢字","中国文化","中国法律","日本歴史","日本経済","中国経済","日本アイドル")
 	</script>
 	<script type="text/javascript" src="jquery-2.1.1.js"></script>
-	<script type="text/javascript" src="d3.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
@@ -18,7 +18,7 @@
 		<script type="text/javascript">
 			for (i=5; i>0; i--) {
 				for (j=5; j>=1; j--) {
-					$("#mainbox").append("<div id='box"+((i-1)*5+j)+"' class='box'>"+((i-1)*5+j)+"</div>");
+					$("#mainbox").append("<div id='box"+((i-1)*5+j)+"' class='box'>"+subject[(i-1)*5+j-1]+"</div>");
 					$("#box"+((i-1)*5+j)).css({
 						left: 100*(j-1),
 						top: 100*(i-1)
@@ -36,6 +36,7 @@
 		<div id="red" class="colorselect red"></div>
 	</div>
 	<div id="controlbotton">
+		<div id="back"></div>
 	</div>
 </body>
 </html>
