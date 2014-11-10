@@ -14,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body style="margin: 0;">
-	<div id="logo" style="background-color: black"></div>
+	<div id="logo" style="background-image: url(./attack25.png)"></div>
 	<div id="mainbox">
 		<script type="text/javascript">
 			for (i=5; i>0; i--) {
@@ -22,7 +22,7 @@
 					$("#mainbox").append("<div id='box"+((i-1)*5+j)+"' class='box'>"+subject[(i-1)*5+j-1]+"</div>");
 					$("#box"+((i-1)*5+j)).css({
 						left: 100*(j-1),
-						top: 50*(i-1)
+						top: 100*(i-1)
 					});	
 				}
 			}
@@ -36,8 +36,7 @@
 		<div id="yellow" class="colorselect yellow" style="left: 100px;"></div>
 		<div id="red" class="colorselect red"></div>
 	</div>
-	<div id="controlbotton">
-		<div id="back"></div>
-	</div>
+	<div id="back"></div>
+	<div id="question"></div>
 </body>
 </html>

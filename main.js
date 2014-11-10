@@ -1,20 +1,38 @@
 $(document).ready(function(){
 	$("#logo").css({
-		top: "10px",
+		top: "0px",
 		left: function(){
-			return (window.innerWidth-512)/2;
+			return (window.innerWidth-512);
 		}
-	})
+	});
+	$("#mainbox").css({
+		top: function(){
+			return (window.innerHeight-500)/2;
+		},
+		left: function(){
+			return (window.innerWidth-500-512)/2;
+		}
+	});
+	$("#question").css({
+		top: function(){
+			return (window.innerHeight-500)/2;
+		},
+		left: function(){
+			return (window.innerWidth-500-512)/2;
+		}
+	});
 	$("#cover").click(function(){
 		$("#colorselect").css("display", "none");
 		$("#cover").css("display", "none");
+		$("#question").css("display", "none");
 	})
 	$(".box").click(function(){
 		if (($(this).attr("class")!='box')&&(count<20)) {
 			return false;
 		} else {
 			boxid=$(this).attr("id").substring(3);
-			$("#cover").css("display", "block")
+			$("#cover").css("display", "block");
+			$("#question").css("display", "block");
 			$("#colorselect").css({
 				display: 'block',
 				left: $(this).offset().left-200,
@@ -72,7 +90,7 @@ function storedata(){
 function check(pos) {
 	currentcolor=$("#box"+pos).attr("class").substring(4);
 	currentpos=pos;
-	re=''
+	re='';
 	re+=check_up(currentpos, currentcolor);
 	re+=check_down(currentpos, currentcolor);
 	re+=check_left(currentpos, currentcolor);
@@ -81,14 +99,13 @@ function check(pos) {
 	re+=check_leftdown(currentpos, currentcolor);
 	re+=check_rigthup(currentpos, currentcolor);
 	re+=check_rightdown(currentpos, currentcolor);
-	alert(re);
 }
 function check_up(pos, color){
 	if (((pos>=1)&&(pos<=5))||$("#box"+pos).attr("class").substring(4)!=color) {
 		return 0;
 	}
 	find=pos-5;
-	limit=pos%5;
+	limit=(pos-1)%5-(-1);
 	while ((find>=limit)&&($("#box"+find).attr("class")!='box')&&($("#box"+find).attr("class").substring(4)!=color)) {
 		find-=5;
 	}
