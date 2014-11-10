@@ -1,17 +1,6 @@
 body {
 	background-color: #e8e08b;
 }
-#attack {
-	width: 700px;
-	height: 100px;
-	border-radius: 10px;
-	background-color: #cccccc;
-	position: fixed;
-	display: none;
-	text-align: center;
-	line-height: 100px;
-	font-size: 50px;
-}
 #logo {
 	background-color: black;
 	height: 250px;
@@ -19,7 +8,7 @@ body {
 	border-radius: 10px;
 	position: absolute;
 }
-#question,#answer {
+#question,#answer,#attack {
 	height: 300px;
 	width: 1000px;
 	background-color: #cccccc;

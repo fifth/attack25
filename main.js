@@ -143,44 +143,41 @@ $(document).ready(function(){
 			return (window.innerWidth-1000)/2;
 		}
 	});
+	$("#attack").css({
+		top: function(){
+			return (window.innerHeight-500)/2;
+		},
+		left: function(){
+			return (window.innerWidth-1000)/2;
+		}
+	});
 	$("#cover").click(function(){
 		$("#colorselect").css("display", "none");
 		$("#cover").css("display", "none");
 		$("#question").css("display", "none");
+		$("#attack").css("display", "none");
 		$("#answer").css("display", "none");
 	})
 	$(".box").click(function(){
-		if (flag==1) {
+		if (($(this).attr("class")=='box')||(flag==1)) {
 			boxid=$(this).attr("id").substring(3);
-			$("#cover").css("display", "block");
-			if (count>=20) {
-				$("#colorselect").css({
-					display: 'block',
-					left: function(){
-						return (window.innerWidth-1000)/2;
-					},
-					top: $(this).offset().top
-				});
-			}
-		} else {
-			if ($(this).attr("class")!='box') {
-				return false;
+			$("#cover").css("display", "block"); 
+			if (flag==1) {
+				$("#attack").css("display", "block");
 			} else {
-				boxid=$(this).attr("id").substring(3);
-				$("#cover").css("display", "block");
 				$("#question").css("display", "block");
-				$("#colorselect").css({
-					display: 'block',
-					// left: $(this).offset().left-200,
-					// top: $(this).offset().top
-					left: function(){
-						return (window.innerWidth-700)/2;
-					},
-					bottom: function(){
-						return (window.innerHeight-500)/2;
-					}
-				});			
 			}
+			$("#colorselect").css({
+				display: 'block',
+				left: function(){
+					return (window.innerWidth-700)/2;
+				},
+				bottom: function(){
+					return (window.innerHeight-500)/2;
+				}
+			});	
+		} else {
+			return false;		
 		}
 	});
 	$("#question").click(function(){
@@ -196,14 +193,12 @@ $(document).ready(function(){
 		$("#cover").css("display", "none");
 		$("#question").css("display", "none");
 		$("#answer").css("display", "none");
+		$("#attack").css("display", "none");
 		check(boxid);
 		storedata();
-		count++;
 		numbers();
-		if ((count==21)&&(flag==0)) {
-			flag=1;
-		} else if (flag==1) {
-			flag=0;
+		if (count==21) {
+			flag=1-flag;
 		}
 		if (count>=25) {
 			alert('game over');
@@ -229,7 +224,6 @@ $(document).ready(function(){
 				$("#box"+((i-1)*5+j)).attr("class", classvalue);	
 			}
 		}
-		count--;
 		numbers();
 		if (count==21) {
 			flag=1;
@@ -245,6 +239,7 @@ function numbers(){
 			num[$("#box"+i).attr("class").substring(4)]++;
 		}
 	}
+	count=25-num['none'];
 	$("#color-none").html(num['none']);
 	$("#color-red").html(num['red']);
 	$("#color-yellow").html(num['yellow']);
