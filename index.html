@@ -7,7 +7,8 @@
 		var store=new Array();
 		store[0]="0000000000000000000000000";
 		var count=0;
-		var subject=new Array("中国経済","浙江大学","中国地域","日本法律","おもしろい","日本文化","おもしろい","中国法律","日本経済","数学","中国アイドル","漢字","日中友好","日本アニメ","日本法律","日中音楽","中国文化","数学","漢字","中国文化","中国法律","日本歴史","日本経済","中国経済","日本アイドル")
+		var subject=new Array("中国経済","浙江大学","中国地域","日本法律","おもしろい","日本文化","おもしろい","中国法律","日本経済","数学","中国アイドル","漢字","日中友好","日本アニメ","日本法律","日中音楽","中国文化","数学","漢字","中国文化","中国法律","日本歴史","日本経済","中国経済","日本アイドル");
+		var flag=0;
 	</script>
 	<script type="text/javascript" src="jquery-2.1.1.js"></script>
 	<script type="text/javascript" src="main.js"></script>
@@ -28,15 +29,25 @@
 			}
 		</script>
 	</div>
+	<div id="record">
+		<div id="color-none" class="un box" style="left: 300px; top: 150px;"></div>
+		<div id="color-purple" class="un box purple" style="left: 150px; top: 150px;"></div>
+		<div id="color-green" class="un box green" style="top: 150px;"></div>
+		<div id="color-blue" class="un box blue" style="left: 300px;"></div>
+		<div id="color-yellow" class="un box yellow" style="left: 150px;"></div>
+		<div id="color-red" class="un box red"></div>
+	</div>
 	<div id="cover"></div>
 	<div id="colorselect">
-		<div id="purple" class="colorselect purple" style="left: 400px;"></div>
-		<div id="green" class="colorselect green" style="left: 300px;"></div>
-		<div id="blue" class="colorselect blue" style="left: 200px;"></div>
-		<div id="yellow" class="colorselect yellow" style="left: 100px;"></div>
+		<div id="purple" class="colorselect purple" style="left: 600px;"></div>
+		<div id="green" class="colorselect green" style="left: 450px;"></div>
+		<div id="blue" class="colorselect blue" style="left: 300px;"></div>
+		<div id="yellow" class="colorselect yellow" style="left: 150px;"></div>
 		<div id="red" class="colorselect red"></div>
 	</div>
-	<div id="back"></div>
-	<div id="question"></div>
+	<div id="attack">アタックチャンス</div>
+	<!-- <div id="back"></div> -->
+	<div id="question" style="font-size: 100px; line-height: 300px;">質問を聞いてください</div>
+	<div id="answer" style="width: 950; height: 250; padding: 25px; font-size: 50px; line-height: 50px;"></div>
 </body>
 </html>
