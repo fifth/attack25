@@ -107,7 +107,7 @@ $(document).ready(function(){
 			return (window.innerHeight-500)/2;
 		},
 		right: function(){
-			return (window.innerWidth-1000)/2;
+			return (window.innerWidth/2-500)/2;
 		}
 	});
 	$("#record").css({
