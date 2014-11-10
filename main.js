@@ -163,38 +163,23 @@ $(document).ready(function(){
 				});
 			}
 		} else {
-			if (($(this).attr("class")!='box')&&(count<20)) {
+			if ($(this).attr("class")!='box') {
 				return false;
 			} else {
 				boxid=$(this).attr("id").substring(3);
 				$("#cover").css("display", "block");
 				$("#question").css("display", "block");
-				if (count<20) {
-					$("#colorselect").css({
-						display: 'block',
-						// left: $(this).offset().left-200,
-						// top: $(this).offset().top
-						left: function(){
-							return (window.innerWidth-700)/2;
-						},
-						bottom: function(){
-							return (window.innerHeight-500)/2;
-						}
-					});
-				} else {
-					$("#attack").css({
-						display: 'block',
-						// left: $(this).offset().left-200,
-						// top: $(this).offset().top
-						left: function(){
-							return (window.innerWidth-700)/2;
-						},
-						bottom: function(){
-							return (window.innerHeight-500)/2;
-						}
-					});
-
-				}
+				$("#colorselect").css({
+					display: 'block',
+					// left: $(this).offset().left-200,
+					// top: $(this).offset().top
+					left: function(){
+						return (window.innerWidth-700)/2;
+					},
+					bottom: function(){
+						return (window.innerHeight-500)/2;
+					}
+				});			
 			}
 		}
 	});
@@ -215,19 +200,15 @@ $(document).ready(function(){
 		storedata();
 		count++;
 		numbers();
-		flag=0;
+		if ((count==21)&&(flag==0)) {
+			flag=1;
+		} else if (flag==1) {
+			flag=0;
+		}
 		if (count>=25) {
 			alert('game over');
 		}
 	});
-	$("#attack").click(function(){
-		flag=1;	
-		$("#colorselect").css("display", "none");
-		$("#cover").css("display", "none");
-		$("#question").css("display", "none");
-		$("#answer").css("display", "none");
-		$("#attack").css("display", "none");
-	})
 	$("#logo").click(function(){
 		store.pop();
 		presstatus=store[store.length-1];
@@ -250,7 +231,7 @@ $(document).ready(function(){
 		}
 		count--;
 		numbers();
-		if (count>=20) {
+		if (count==21) {
 			flag=1;
 		}
 	});
