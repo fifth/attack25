@@ -1,4 +1,10 @@
 $(document).ready(function(){
+	$("#logo").css({
+		top: "10px",
+		left: function(){
+			return (window.innerWidth-512)/2;
+		}
+	})
 	$("#cover").click(function(){
 		$("#colorselect").css("display", "none");
 		$("#cover").css("display", "none");
