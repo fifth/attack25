@@ -103,11 +103,14 @@ var qna=[
 
 $(document).ready(function(){
 	$("#logo").css({
-		top: function(){
-			return (window.innerHeight-500)/2;
+		bottom: function(){
+			return window.innerHeight-200-(window.innerHeight-500)/2;
 		},
 		right: function(){
 			return (window.innerWidth/2-500)/2;
+		},
+		width: function(){
+			return window.innerWidth/2-(window.innerWidth/2-500)/2;
 		}
 	});
 	$("#record").css({

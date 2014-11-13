@@ -2,11 +2,11 @@ body {
 	background-color: #e8e08b;
 }
 #logo {
-	background-color: black;
-	height: 250px;
-	width: 500px;
 	border-radius: 10px;
 	position: absolute;
+	background-position: center;
+	width: 500px;
+	background-repeat: no-repeat;
 }
 #question,#answer,#attack {
 	height: 300px;
@@ -33,7 +33,7 @@ body {
 	height: 98px;
 	width: 98px;
 	position: absolute;
-	background-color: #dfdcc2;
+	background-color: #ded49b;
 	cursor: pointer;
 	text-align: center;
 	line-height: 100px;
@@ -69,19 +69,19 @@ body {
 	box-shadow: 0px 0px 5px #888888;
 }
 .red {
-	background-color: red;
+	background-color: #fc4928;
 }
 .yellow {
-	background-color: yellow;
+	background-color: #fcc728;
 }
 .blue {
-	background-color: blue;
+	background-color: #7f9ad1;
 }
 .green {
-	background-color: green;
+	background-color: #2cfd07;
 }
 .purple {
-	background-color: purple;
+	background-color: #f94de9;
 }
 #record {
 	height: 250px;
