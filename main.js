@@ -1,105 +1,3 @@
-var qna=[
-	{
-		"question": "これは問題一これは問題一これは問題一これは問題一これは問題一これは問題一これは問題一これは問題一これは問題一これは問題一",
-		"answer": "これは答え一"
-	},
-	{
-		"question": "これは問題二これは問題二これは問題二これは問題二これは問題二これは問題二これは問題二これは問題二これは問題二これは問題二",
-		"answer": "これは答え二"
-	},
-	{
-		"question": "これは問題三これは問題三これは問題三これは問題三これは問題三これは問題三これは問題三これは問題三これは問題三これは問題三",
-		"answer": "これは答え三"
-	},
-	{
-		"question": "これは問題四これは問題四これは問題四これは問題四これは問題四これは問題四これは問題四これは問題四これは問題四これは問題四",
-		"answer": "これは答え四"
-	},
-	{
-		"question": "これは問題五これは問題五これは問題五これは問題五これは問題五これは問題五これは問題五これは問題五これは問題五これは問題五",
-		"answer": "これは答え五"
-	},
-	{
-		"question": "これは問題六これは問題六これは問題六これは問題六これは問題六これは問題六これは問題六これは問題六これは問題六これは問題六",
-		"answer": "これは答え六"
-	},
-	{
-		"question": "これは問題七これは問題七これは問題七これは問題七これは問題七これは問題七これは問題七これは問題七これは問題七これは問題七",
-		"answer": "これは答え七"
-	},
-	{
-		"question": "これは問題八これは問題八これは問題八これは問題八これは問題八これは問題八これは問題八これは問題八これは問題八これは問題八",
-		"answer": "これは答え八"
-	},
-	{
-		"question": "これは問題九これは問題九これは問題九これは問題九これは問題九これは問題九これは問題九これは問題九これは問題九これは問題九",
-		"answer": "これは答え九"
-	},
-	{
-		"question": "これは問題十これは問題十これは問題十これは問題十これは問題十これは問題十これは問題十これは問題十これは問題十これは問題十",
-		"answer": "これは答え十"
-	},
-	{
-		"question": "これは問題十一これは問題十一これは問題十一これは問題十一これは問題十一これは問題十一これは問題十一これは問題十一これは問題十一これは問題十一",
-		"answer": "これは答え十一"
-	},
-	{
-		"question": "これは問題十二これは問題十二これは問題十二これは問題十二これは問題十二これは問題十二これは問題十二これは問題十二これは問題十二これは問題十二",
-		"answer": "これは答え十二"
-	},
-	{
-		"question": "これは問題十三これは問題十三これは問題十三これは問題十三これは問題十三これは問題十三これは問題十三これは問題十三これは問題十三これは問題十三",
-		"answer": "これは答え十三"
-	},
-	{
-		"question": "これは問題十四これは問題十四これは問題十四これは問題十四これは問題十四これは問題十四これは問題十四これは問題十四これは問題十四これは問題十四",
-		"answer": "これは答え十四"
-	},
-	{
-		"question": "これは問題十五これは問題十五これは問題十五これは問題十五これは問題十五これは問題十五これは問題十五これは問題十五これは問題十五これは問題十五",
-		"answer": "これは答え十五"
-	},
-	{
-		"question": "これは問題十六これは問題十六これは問題十六これは問題十六これは問題十六これは問題十六これは問題十六これは問題十六これは問題十六これは問題十六",
-		"answer": "これは答え十六"
-	},
-	{
-		"question": "これは問題十七これは問題十七これは問題十七これは問題十七これは問題十七これは問題十七これは問題十七これは問題十七これは問題十七これは問題十七",
-		"answer": "これは答え十七"
-	},
-	{
-		"question": "これは問題十八これは問題十八これは問題十八これは問題十八これは問題十八これは問題十八これは問題十八これは問題十八これは問題十八これは問題十八",
-		"answer": "これは答え十八"
-	},
-	{
-		"question": "これは問題十九これは問題十九これは問題十九これは問題十九これは問題十九これは問題十九これは問題十九これは問題十九これは問題十九これは問題十九",
-		"answer": "これは答え十九"
-	},
-	{
-		"question": "これは問題二十これは問題二十これは問題二十これは問題二十これは問題二十これは問題二十これは問題二十これは問題二十これは問題二十これは問題二十",
-		"answer": "これは答え二十"
-	},
-	{
-		"question": "これは問題二十一これは問題二十一これは問題二十一これは問題二十一これは問題二十一これは問題二十一これは問題二十一これは問題二十一これは問題二十一これは問題二十一",
-		"answer": "これは答え二十一"
-	},
-	{
-		"question": "これは問題二十二これは問題二十二これは問題二十二これは問題二十二これは問題二十二これは問題二十二これは問題二十二これは問題二十二これは問題二十二これは問題二十二",
-		"answer": "これは答え二十二"
-	},
-	{
-		"question": "これは問題二十三これは問題二十三これは問題二十三これは問題二十三これは問題二十三これは問題二十三これは問題二十三これは問題二十三これは問題二十三これは問題二十三",
-		"answer": "これは答え二十三"
-	},
-	{
-		"question": "これは問題二十四これは問題二十四これは問題二十四これは問題二十四これは問題二十四これは問題二十四これは問題二十四これは問題二十四これは問題二十四これは問題二十四",
-		"answer": "これは答え二十四"
-	},
-	{
-		"question": "これは問題二十五これは問題二十五これは問題二十五これは問題二十五これは問題二十五これは問題二十五これは問題二十五これは問題二十五これは問題二十五これは問題二十五",
-		"answer": "これは答え二十五"
-	},
-]
 
 $(document).ready(function(){
 	$("#logo").css({
@@ -130,78 +28,53 @@ $(document).ready(function(){
 			return (window.innerWidth-1000)/2;
 		}
 	});
-	$("#question").css({
-		top: function(){
-			return (window.innerHeight-500)/2;
-		},
-		left: function(){
-			return (window.innerWidth-1000)/2;
-		}
-	});
-	$("#answer").css({
-		top: function(){
-			return (window.innerHeight-500)/2;
-		},
-		left: function(){
-			return (window.innerWidth-1000)/2;
-		}
-	});
 	$("#attack").css({
 		top: function(){
-			return (window.innerHeight-500)/2;
+			return (window.innerHeight-200)/2;
 		},
 		left: function(){
-			return (window.innerWidth-1000)/2;
+			return (window.innerWidth-900)/2;
 		}
 	});
 	$("#cover").click(function(){
 		$("#colorselect").css("display", "none");
 		$("#cover").css("display", "none");
-		$("#question").css("display", "none");
 		$("#attack").css("display", "none");
-		$("#answer").css("display", "none");
 	})
 	$(".box").click(function(){
-		if (($(this).attr("class")=='box')||(flag==1)) {
+		if ((($(this).attr("class")=='box')&&(flag!=1))||(($(this).attr("class")!='box')&&(flag==1))) {
 			boxid=$(this).attr("id").substring(3);
 			$("#cover").css("display", "block"); 
-			if (flag==1) {
-				$("#attack").css("display", "block");
-			} else {
-				$("#question").css("display", "block");
-			}
 			$("#colorselect").css({
 				display: 'block',
 				left: function(){
 					return (window.innerWidth-700)/2;
 				},
 				bottom: function(){
-					return (window.innerHeight-500)/2;
+					return (window.innerHeight-50)/2;
 				}
 			});	
 		} else {
 			return false;		
 		}
 	});
-	$("#question").click(function(){
-		$("#question").css("display", "none");
-		$("#answer").html('');
-		$("#answer").append(qna[boxid-1]['question']+'<br/>'+qna[boxid-1]['answer']);
-		$("#answer").css("display", "block");
-	})
 	$(".colorselect").click(function(){
 		$("#box"+boxid).attr("class", "box");
 		$("#box"+boxid).addClass($(this).attr("id"));
 		$("#colorselect").css("display", "none");
 		$("#cover").css("display", "none");
-		$("#question").css("display", "none");
-		$("#answer").css("display", "none");
 		$("#attack").css("display", "none");
 		check(boxid);
 		storedata();
 		numbers();
 		if (count==21) {
 			flag=1-flag;
+			if (flag==1) {
+				$("#attack").css("display","block");
+				$("#attack").click(function(){
+					$("#attack").css("display","none");
+				})
+			}
 		}
 		if (count>=25) {
 			alert('game over');
